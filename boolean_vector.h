@@ -7,7 +7,10 @@ private:
     unsigned short size;
     int* coords;
 public:
+    boolean_vector();
     boolean_vector(int* coords, unsigned short size);
+    boolean_vector(unsigned short size);
+    boolean_vector(const boolean_vector& other);
     ~boolean_vector();
 
 
@@ -18,9 +21,11 @@ public:
     boolean_vector operator ! ();
 
     void ShowCoords() ;
-    // Getter for size
+
+    // Setter
+    void setCoord(unsigned short index, int value);
+
+    // Getters
     unsigned short getSize() const;
-// Getter for coords
-    int* getCoords() const ;
     int getWeight() const;
 };
