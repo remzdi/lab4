@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "functions.h"
 #include "boolean_vector.h"
@@ -14,7 +13,7 @@ int main() {
     cout << "B2 = ";
     B2.ShowCoords();
 
-    check_boolean_vectors_size(B1, B2); 
+    check_boolean_vectors_size(B1, B2);
 
     boolean_vector B3 = complement && B2;
     cout << "B3 = ";
