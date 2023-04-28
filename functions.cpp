@@ -23,11 +23,12 @@ boolean_vector get_input_boolean_vector(int vectorNumber) {
         }
     } while (er);
 
-    int* coords = new int[size];
+    boolean_vector result(size); // create an instance of boolean_vector with given size
+
     for (int i = 0; i < size; i++) {
         int num;
         do {
-            cout << "Enter the " << i+1 << "th element of Boolean vector B" << vectorNumber << " (0 or 1): ";
+            cout << "Enter the " << i + 1 << "th element of Boolean vector B" << vectorNumber << " (0 or 1): ";
             cin >> num;
             cout << endl;
             if (cin.fail() || num < 0 || num > 1) {
@@ -37,9 +38,9 @@ boolean_vector get_input_boolean_vector(int vectorNumber) {
                 break;
             }
         } while (num < 0 || num > 1);
-        coords[i] = num; // store the input in the array if it is 0 or 1
+
+        result.setCoord(i, num); // set the i-th coordinate of the result vector
+
     }
-    boolean_vector result(coords, size);
-    delete[] coords;
     return result;
 }
